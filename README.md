@@ -4,7 +4,9 @@ A little love note, sealed with a kiss.
 
 Mr. Kiss lets you design two tiny avatars, tap kisses onto the recipient's face, and send the entire note — names, faces, timing, and every kiss — inside a single URL. No accounts, no database, no server-side love letters.
 
-**Live production:** [https://mrkiss.online](https://mrkiss.online)
+**Production URL:** [https://mrkiss.online](https://mrkiss.online)
+
+[![Deploy to GitHub Pages](https://github.com/dmjslabjsl/mr-kiss/actions/workflows/deploy.yml/badge.svg)](https://github.com/dmjslabjsl/mr-kiss/actions/workflows/deploy.yml)
 
 ![Mr. Kiss preview](./public/og.jpg)
 
@@ -38,6 +40,8 @@ The app is a static site. The production deployment is **GitHub Pages**, built a
 **Production URL:** [https://mrkiss.online](https://mrkiss.online)
 
 Every push to `main` (and manual “Run workflow” dispatches) runs [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml). That workflow installs with pnpm, type-checks, runs the codec tests, builds the static site, and publishes `dist/` with the official GitHub Pages Actions. There is no `gh-pages` branch to keep in sync.
+
+`main` on this repository is branch-protected: changes must land through a pull request with an approving review, and mainline commits must be signed. Use **Squash and merge** so GitHub creates a verified squash commit; the Pages workflow then runs automatically on the new `main`. If you are the only maintainer, temporarily adjusting the required-review rule or adding a second reviewer is the only way through protection — there is no admin bypass configured.
 
 The repository is already prepared for the custom domain:
 
