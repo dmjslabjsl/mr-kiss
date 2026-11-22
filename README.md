@@ -45,10 +45,11 @@ Every push to `main` (and manual “Run workflow” dispatches) runs [`.github/w
 
 The repository is already prepared for the custom domain:
 
+- Pages is enabled with **Build and deployment → Source: GitHub Actions**, and the custom domain is set to `mrkiss.online`.
 - `public/CNAME` contains `mrkiss.online` and is copied to the deployed root.
 - `public/.nojekyll` prevents any Jekyll processing of the static build.
-- The workflow needs **Settings → Pages → Build and deployment → Source: GitHub Actions** once. It also needs the custom domain entered under **Settings → Pages → Custom domain** (or the deployed `CNAME` will set it).
-- After DNS has propagated and GitHub has issued the certificate, enable **Enforce HTTPS**.
+- For a fork, set Pages → Source to GitHub Actions and add the custom domain once.
+- After DNS has propagated and GitHub has issued the certificate, enable **Enforce HTTPS**; it is currently off because DNS still points at the registrar parking page.
 
 ### DNS for `mrkiss.online`
 
@@ -66,7 +67,7 @@ At the DNS provider for `mrkiss.online`, point the apex at GitHub Pages and `www
 | `AAAA`  | `@`   | `2606:50c0:8003::153`  |
 | `CNAME` | `www` | `dmjslabjsl.github.io` |
 
-Remove any old apex `A`/`AAAA` records (for example, a registrar parking page) before adding these. If the DNS provider supports `ALIAS`/`ANAME`, the apex can alternatively point at `dmjslabjsl.github.io`. GitHub Pages serves the site at [https://dmjslabjsl.github.io/mr-kiss/](https://dmjslabjsl.github.io/mr-kiss/) as well, which is useful before DNS is switched.
+Remove any old apex `A`/`AAAA` records (for example, the current registrar parking page at `192.64.119.240`) before adding these. If the DNS provider supports `ALIAS`/`ANAME`, the apex can alternatively point at `dmjslabjsl.github.io`. The repository's Pages hostname is [https://dmjslabjsl.github.io/mr-kiss/](https://dmjslabjsl.github.io/mr-kiss/); once the custom domain is configured, GitHub redirects that hostname to `mrkiss.online` after DNS is live.
 
 ### SEO checklist
 
