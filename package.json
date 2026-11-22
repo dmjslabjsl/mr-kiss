@@ -1,0 +1,33 @@
+{
+  "name": "mr-kiss",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A little long-distance love note, sealed with a kiss.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run",
+    "lint": "prettier --write ."
+  },
+  "dependencies": {
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/quicksand": "^5.3.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "6.2.4",
+    "@tsconfig/svelte": "^5.0.4",
+    "prettier": "3.10.1",
+    "svelte": "^5.59.1",
+    "svelte-check": "^4.7.8",
+    "typescript": "~5.9.3",
+    "vite": "7.3.8",
+    "vitest": "4.1.12"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "packageManager": "pnpm@11.28.5"
+}
